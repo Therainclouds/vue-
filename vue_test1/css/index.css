@@ -1,0 +1,17 @@
+#app {
+  text-align: center;
+  padding: 50px;
+}
+.banner {
+  width: 500px;
+  height: 100px;
+  line-height: 150px;
+  text-align: center;
+  box-shadow: 5px 5px 10px #666;
+  font-size: 40px;
+  font-weight: bolder;
+  background-color: #033592;
+  color: aliceblue;
+  margin: 0 auto;
+  border-radius: 20px;
+}
