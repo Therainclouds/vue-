@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+div {
+  /* 开启3D效果 */
+  transform-style: preserve-3d;
+}
+#container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #1b2735, #090a0f);
+  overflow: hidden;
+  perspective: 500px;
+}
+.camera {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.camera.-x {
+  transform: rotateX(60deg);
+}
+.camera.-y {
+  transform: rotateY(0deg);
+}
+.camera.-z {
+  animation: rotateZ 30s linear infinite;
+}
+.sea {
+  width: 250px;
+  height: 250px;
+
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(10, 7.5%);
+  grid-template-columns: repeat(10, 7.5%);
+  grid-gap: 2.5%;
+}
+.wave {
+  animation: wave 1s cubic-bezier(0.475, 0.05, 0.65, 1) infinite alternate;
+  animation-delay: var(--d);
+}
+.counter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.counter.-x {
+  transform: rotateX(-60deg);
+}
+.counter.-y {
+  transform: rotateY(0deg);
+}
+.counter.-z {
+  animation: rotateZ 30s linear infinite reverse;
+}
+.ball {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 0px 3px, #fff, #69a8cc 60%, #23315c);
+  border-radius: 100%;
+  /* box-shadow: 0 100px 12px rgba(96, 148, 179, 0.2); */
+  filter: drop-shadow(0 100px 12px rgba(96, 148, 179, 0.2));
+}
+
+@keyframes rotateZ {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translateZ(30px);
+  }
+}

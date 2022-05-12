@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>波浪动画</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="camera -x">
+            <div class="camera -y">
+                <div class="camera -z">
+                    <div class="sea">
+                        <div class="wave" v-for="item in 100" :style="{'--d':item*-30 + 'ms'}">
+                            <div class="counter -z">
+                                <div class="counter -y">
+                                    <div class="counter -x">
+                                        <div class="ball"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    new Vue({
+        el: '#container',
+        data: {
+
+        }
+    })
+</script>
